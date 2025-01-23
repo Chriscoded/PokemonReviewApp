@@ -8,5 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with: 
+          dotnete-version: 8.0.x
+        
+      - name: Install Dependencies
+        run: dotnet restore ./PokemonReviewApp/PokemonReviewApp.csproj
+
+      - name: build
+        run: dotnet build ./PokemonReviewApp/PokemonReviewApp.csproj --configuration Release --no-restore
+
     
