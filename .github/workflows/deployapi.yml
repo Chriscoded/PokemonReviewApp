@@ -1,0 +1,12 @@
+#Github action to dploy pokemon reveiew api
+
+name: Deploy Pokemon Review API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    
